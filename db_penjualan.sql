@@ -514,8 +514,9 @@ CREATE TABLE IF NOT EXISTS `tbl_user` (
 --
 
 INSERT INTO `tbl_user` (`user_id`, `user_nama`, `user_username`, `user_password`, `user_level`, `user_status`) VALUES
-(1, 'M Fikri Setiadi', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1', '1'),
-(2, 'fikri', 'kasir', 'e10adc3949ba59abbe56e057f20f883e', '2', '1');
+(1, 'admin', 'admin', 'admin', '1'),
+(3, 'cabul', 'cabul', 'cabul', '1');
+(4, 'apa', 'apa', 'apa', '5');
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)

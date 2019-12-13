@@ -6,10 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Produk By Mfikri.com">
-    <meta name="author" content="M Fikri Setiadi">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <title>Welcome To Point of Sale Apps</title>
+    <title>SELAMAT DATANG DI WARUNG IBU GEMBUL</title>
 
     <!-- Bootstrap Core CSS -->
       <link href="<?php echo base_url().'assets/css/bootstrap.min.css'?>" rel="stylesheet">
@@ -44,15 +44,16 @@
         <!-- Page Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header" style="color:#fcc;">Welcome to
-                    <small>Point of Sale Apps</small>
+                <h1 class="page-header" style="color:#fcc;">SELAMAT DATANG DI
+                    <small>WARUNG IBU GEMBUL</small>
                 </h1>
             </div>
         </div>
         <!-- /.row -->
 	<div class="mainbody-section text-center">
-     <?php $h=$this->session->userdata('akses'); ?>
+     <?php $h=$this->session->userdata('masuk'); ?>
      <?php $u=$this->session->userdata('user'); ?>
+      
 
         <!-- Projects Row -->
         <div class="row">
