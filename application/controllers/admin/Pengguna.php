@@ -9,7 +9,7 @@ class Pengguna extends CI_Controller{
 		$this->load->model('m_pengguna');
 	}
 	function index(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$data['data']=$this->m_pengguna->get_pengguna();
 		$this->load->view('admin/v_pengguna',$data);
 	}else{
@@ -18,7 +18,7 @@ class Pengguna extends CI_Controller{
 	}
 
 	function tambah_pengguna(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$nama=$this->input->post('nama');
 		$username=$this->input->post('username');
 		$password=$this->input->post('password');
@@ -38,7 +38,7 @@ class Pengguna extends CI_Controller{
     }
 	}
 	function edit_pengguna(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$kode=$this->input->post('kode');
 		$nama=$this->input->post('nama');
 		$username=$this->input->post('username');
@@ -62,7 +62,7 @@ class Pengguna extends CI_Controller{
     }
 	}
 	function nonaktifkan(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$kode=$this->input->post('kode');
 		$this->m_pengguna->update_status($kode);
 		redirect('admin/pengguna');

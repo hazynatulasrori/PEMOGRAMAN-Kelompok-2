@@ -9,7 +9,7 @@ class Kategori extends CI_Controller{
 		$this->load->model('m_kategori');
 	}
 	function index(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$data['data']=$this->m_kategori->tampil_kategori();
 		$this->load->view('admin/v_kategori',$data);
 	}else{
@@ -17,7 +17,7 @@ class Kategori extends CI_Controller{
     }
 	}
 	function tambah_kategori(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$kat=$this->input->post('kategori');
 		$this->m_kategori->simpan_kategori($kat);
 		redirect('admin/kategori');
@@ -26,7 +26,7 @@ class Kategori extends CI_Controller{
     }
 	}
 	function edit_kategori(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$kode=$this->input->post('kode');
 		$kat=$this->input->post('kategori');
 		$this->m_kategori->update_kategori($kode,$kat);
@@ -36,7 +36,7 @@ class Kategori extends CI_Controller{
     }
 	}
 	function hapus_kategori(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$kode=$this->input->post('kode');
 		$this->m_kategori->hapus_kategori($kode);
 		redirect('admin/kategori');

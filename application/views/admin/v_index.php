@@ -32,7 +32,7 @@
 </head>
 
 <body>
-<img src="<?php echo base_url().'assets/img/bg2.jpg'?>" alt="gambar" class="bg" />
+<img src="<?php echo base_url().'assets/img/sakarep2.jpg'?>" alt="gambar" class="bg" />
     <!-- Navigation -->
    <?php 
         $this->load->view('admin/menu');
@@ -45,7 +45,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header" style="color:#fcc;">SELAMAT DATANG DI
-                    <small>WARUNG IBU GEMBUL</small>
+                    <small>TOKO IBU GEMBUL</small>
                 </h1>
             </div>
         </div>
@@ -55,7 +55,6 @@
      <?php $u=$this->session->userdata('user'); ?>
       
 
-        <!-- Projects Row -->
         <div class="row">
          <?php if($h=='1'){ ?> 
             <div class="col-md-3 portfolio-item">
@@ -90,7 +89,7 @@
                       </a>
                 </div> 
             </div>
-            <?php }?>
+            <!-- <?php }?>
             <?php if($h=='2'){ ?> 
             <div class="col-md-3 portfolio-item">
                 <div class="menu-item blue" style="height:150px;">
@@ -130,7 +129,7 @@
         <!-- /.row -->
 
         <!-- Projects Row -->
-        <div class="row">
+        <!-- <div class="row">
         <?php if($h=='1'){ ?> 
             <div class="col-md-3 portfolio-item">
                 <div class="menu-item purple" style="height:150px;">
@@ -198,8 +197,8 @@
                       </a>
                 </div> 
             </div>
-            <?php }?>
-        </div>
+            <?php }?> -->
+        </div>-->
         
 		
         <!-- /.row -->

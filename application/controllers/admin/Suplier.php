@@ -9,7 +9,7 @@ class Suplier extends CI_Controller{
 		$this->load->model('m_suplier');
 	}
 	function index(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$data['data']=$this->m_suplier->tampil_suplier();
 		$this->load->view('admin/v_suplier',$data);
 	}else{
@@ -17,7 +17,7 @@ class Suplier extends CI_Controller{
     }
 	}
 	function tambah_suplier(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$nama=$this->input->post('nama');
 		$alamat=$this->input->post('alamat');
 		$notelp=$this->input->post('notelp');
@@ -28,7 +28,7 @@ class Suplier extends CI_Controller{
     }
 	}
 	function edit_suplier(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$kode=$this->input->post('kode');
 		$nama=$this->input->post('nama');
 		$alamat=$this->input->post('alamat');
@@ -40,7 +40,7 @@ class Suplier extends CI_Controller{
     }
 	}
 	function hapus_suplier(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$kode=$this->input->post('kode');
 		$this->m_suplier->hapus_suplier($kode);
 		redirect('admin/suplier');

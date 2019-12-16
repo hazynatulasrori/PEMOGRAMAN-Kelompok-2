@@ -12,7 +12,7 @@ class Penjualan_grosir extends CI_Controller{
 		$this->load->model('m_penjualan');
 	}
 	function index(){
-	if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
+	if($this->session->userdata('masuk')=='1' || $this->session->userdata('masuk')=='2'){
 		$data['data']=$this->m_barang->tampil_barang();
 		$this->load->view('admin/v_penjualan_grosir',$data);
 	}else{
@@ -20,7 +20,7 @@ class Penjualan_grosir extends CI_Controller{
     }
 	}
 	function get_barang(){
-	if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
+	if($this->session->userdata('masuk')=='1' || $this->session->userdata('masuk')=='2'){
 		$kobar=$this->input->post('kode_brg');
 		$x['brg']=$this->m_barang->get_barang($kobar);
 		$this->load->view('admin/v_detail_barang_jual_grosir',$x);
@@ -29,7 +29,7 @@ class Penjualan_grosir extends CI_Controller{
     }
 	}
 	function add_to_cart(){
-	if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
+	if($this->session->userdata('masuk')=='1' || $this->session->userdata('masuk')=='2'){
 		$kobar=$this->input->post('kode_brg');
 		$produk=$this->m_barang->get_barang($kobar);
 		$i=$produk->row_array();
@@ -69,7 +69,7 @@ class Penjualan_grosir extends CI_Controller{
     }
 	}
 	function remove(){
-	if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
+	if($this->session->userdata('masuk')=='1' || $this->session->userdata('masuk')=='2'){
 		$row_id=$this->uri->segment(4);
 		$this->cart->update(array(
                'rowid'      => $row_id,
@@ -81,7 +81,7 @@ class Penjualan_grosir extends CI_Controller{
     }
 	}
 	function simpan_penjualan_grosir(){
-	if($this->session->userdata('akses')=='1' || $this->session->userdata('akses')=='2'){
+	if($this->session->userdata('masuk')=='1' || $this->session->userdata('masuk')=='2'){
 		$total=$this->input->post('total');
 		$jml_uang=str_replace(",", "", $this->input->post('jml_uang'));
 		$kembalian=$jml_uang-$total;

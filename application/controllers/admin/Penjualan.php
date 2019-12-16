@@ -64,7 +64,7 @@ class Penjualan extends CI_Controller{
 		$this->cart->insert($data);
 	}
 
-		redirect('admin/penjualan');
+		redirect('admin/Penjualan');
 	}else{
         echo "Halaman tidak ditemukan";
     }
@@ -76,7 +76,7 @@ class Penjualan extends CI_Controller{
                'rowid'      => $row_id,
                'qty'     => 0
             ));
-		redirect('admin/penjualan');
+		redirect('admin/Penjualan');
 	}else{
         echo "Halaman tidak ditemukan";
     }

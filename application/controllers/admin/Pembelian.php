@@ -12,7 +12,7 @@ class Pembelian extends CI_Controller{
 		$this->load->model('m_pembelian');
 	}
 	function index(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$x['sup']=$this->m_suplier->tampil_suplier();
 		$this->load->view('admin/v_pembelian',$x);
 	}else{
@@ -20,7 +20,7 @@ class Pembelian extends CI_Controller{
     }
 	}
 	function get_barang(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$kobar=$this->input->post('kode_brg');
 		$x['brg']=$this->m_barang->get_barang($kobar);
 		$this->load->view('admin/v_detail_barang_beli',$x);
@@ -29,7 +29,7 @@ class Pembelian extends CI_Controller{
     }
 	}
 	function add_to_cart(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$nofak=$this->input->post('nofak');
 		$tgl=$this->input->post('tgl');
 		$suplier=$this->input->post('suplier');
@@ -55,7 +55,7 @@ class Pembelian extends CI_Controller{
     }
 	}
 	function remove(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$row_id=$this->uri->segment(4);
 		$this->cart->update(array(
                'rowid'      => $row_id,
@@ -67,7 +67,7 @@ class Pembelian extends CI_Controller{
     }
 	}
 	function simpan_pembelian(){
-	if($this->session->userdata('akses')=='1'){
+	if($this->session->userdata('masuk')=='1'){
 		$nofak=$this->session->userdata('nofak');
 		$tglfak=$this->session->userdata('tglfak');
 		$suplier=$this->session->userdata('suplier');
